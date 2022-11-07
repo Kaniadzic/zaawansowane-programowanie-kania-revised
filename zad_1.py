@@ -1,7 +1,7 @@
 
-def print_names(names):
-    for name in names:
-        print(f'The name is: {name}')
+def concatenate_names(name: str, surname: str) -> str:
+    return f'Cześć {name} {surname}!'
 
 
-print_names(["Bolo", "Martynka", "Kamila", "Anka", "Oksana"])
+fullname = concatenate_names("Szymon", "Kania")
+print(fullname)

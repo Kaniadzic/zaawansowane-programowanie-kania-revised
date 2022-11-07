@@ -1,8 +1,12 @@
 
-def print_numbers(numbers):
-    for i in range(len(numbers)):
-        if (numbers[i] % 2 != 1):
-            print(numbers[i])
+def is_even(number: float) -> bool:
+    return number % 2 == 0
 
 
-print_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+my_number = 10.5
+is_my_number_even = is_even(my_number)
+
+if is_my_number_even:
+    print(f'{my_number} is even!')
+else:
+    print(f'{my_number} is not even!')

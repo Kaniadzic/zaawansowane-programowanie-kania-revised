@@ -1,8 +1,7 @@
 
-def print_numbers(numbers):
-    for i in range(len(numbers)):
-        if (i % 2):
-            print(numbers[i])
+def is_sum_greater(addend1: int, addend2: int, number: int) -> bool:
+    return (addend1 + addend2) > number
 
 
-print_numbers([1, 2, 4, 8, 16, 32, 64, 128, 256, 512])
+print(is_sum_greater(2, 4, 10))
+print(is_sum_greater(2, 4, 1))
