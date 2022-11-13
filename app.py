@@ -18,26 +18,26 @@ def home() -> str:
 @app.route('/movies')
 def movies():
     logic = MoviesLogic()
-    movies = logic.read_movies("C:\\Users\\simi4_000\\source\\repos\\api\\Database\\movies.csv")
+    movies = logic.read_movies("Database/movies.csv")
     return render_template("index.html", data=movies, title="Movies")
 
 
 @app.route('/links')
 def links():
     logic = LinksLogic()
-    links = logic.read_links("C:\\Users\\simi4_000\\source\\repos\\api\\Database\\links.csv")
+    links = logic.read_links("Database/links.csv")
     return render_template("index.html", data=links, title="Links")
 
 
 @app.route('/ratings')
 def ratings():
     logic = RatingsLogic()
-    ratings = logic.read_ratings("C:\\Users\\simi4_000\\source\\repos\\api\\Database\\ratings.csv")
+    ratings = logic.read_ratings("Database/ratings.csv")
     return render_template("index.html", data=ratings, title="Ratings")
 
 
 @app.route('/tags')
 def tags():
     logic = TagsLogic()
-    tags = logic.read_tags("C:\\Users\\simi4_000\\source\\repos\\api\\Database\\tags.csv")
+    tags = logic.read_tags("Database/tags.csv")
     return render_template("index.html", data=tags, title="Tags")
