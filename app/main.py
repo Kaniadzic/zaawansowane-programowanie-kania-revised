@@ -20,33 +20,33 @@ nav.Bar('top', [
 ])
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home():
     return render_template("index.html", title="Home page (it's empty!)")
 
 
-@app.route('/movies')
+@app.route('/movies', methods=['GET'])
 def movies():
     logic = MoviesLogic()
     movies = logic.read_movies("Database/movies.csv")
     return render_template("index.html", data=movies, title="Movies")
 
 
-@app.route('/links')
+@app.route('/links', methods=['GET'])
 def links():
     logic = LinksLogic()
     links = logic.read_links("Database/links.csv")
     return render_template("index.html", data=links, title="Links")
 
 
-@app.route('/ratings')
+@app.route('/ratings', methods=['GET'])
 def ratings():
     logic = RatingsLogic()
     ratings = logic.read_ratings("Database/ratings.csv")
     return render_template("index.html", data=ratings, title="Ratings")
 
 
-@app.route('/tags')
+@app.route('/tags', methods=['GET'])
 def tags():
     logic = TagsLogic()
     tags = logic.read_tags("Database/tags.csv")
