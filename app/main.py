@@ -1,7 +1,7 @@
 
 from flask import Flask
 from flask import render_template
-from flask_navigation import Navigation
+# from flask_navigation import Navigation
 from Model.MoviesLogic import MoviesLogic
 from Model.TagsLogic import TagsLogic
 from Model.RatingsLogic import RatingsLogic
@@ -9,15 +9,15 @@ from Model.LinksLogic import LinksLogic
 
 
 app = Flask(__name__, template_folder='View')
-nav = Navigation(app)
+# nav = Navigation(app)
 
-nav.Bar('top', [
-    nav.Item('Home', 'home'),
-    nav.Item('Movies', 'movies'),
-    nav.Item('Links', 'links'),
-    nav.Item('Ratings', 'ratings'),
-    nav.Item('Tags', 'tags')
-])
+# nav.Bar('top', [
+#     nav.Item('Home', 'home'),
+#     nav.Item('Movies', 'movies'),
+#     nav.Item('Links', 'links'),
+#     nav.Item('Ratings', 'ratings'),
+#     nav.Item('Tags', 'tags')
+# ])
 
 
 @app.route('/', methods=['GET'])

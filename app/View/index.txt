@@ -13,6 +13,12 @@
     <div class="container">
         <div class="container-title">
             <h3 class="title"> {{ title }} </h3>
+
+            <navbar class="menu">
+                {% for item in nav.top %}
+                <a href="{{ item.url }}"> {{ item.label }} </a>
+                {% endfor %}
+            </navbar>
         </div>
         <div class="container-data">
             {% for row in data %}
