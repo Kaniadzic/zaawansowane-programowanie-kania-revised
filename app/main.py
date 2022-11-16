@@ -22,32 +22,32 @@ app = Flask(__name__, template_folder='View')
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template("index.html", title="Home page (it's empty!)")
+    return render_template("index.html", title="Home page (it's empty!)", display=False)
 
 
 @app.route('/movies', methods=['GET'])
 def movies():
     logic = MoviesLogic()
     movies = logic.read_movies("Database/movies.csv")
-    return render_template("index.html", data=movies, title="Movies")
+    return render_template("index.html", data=movies, title="Movies", display=True)
 
 
 @app.route('/links/<item_count>', methods=['GET'])
 def links(item_count: int):
     logic = LinksLogic()
     links = logic.read_links("Database/links.csv", item_count)
-    return render_template("index.html", data=links, title="Links")
+    return render_template("index.html", data=links, title="Links", display=True)
 
 
 @app.route('/ratings', methods=['GET'])
 def ratings():
     logic = RatingsLogic()
     ratings = logic.read_ratings("Database/ratings.csv")
-    return render_template("index.html", data=ratings, title="Ratings")
+    return render_template("index.html", data=ratings, title="Ratings", display=True)
 
 
 @app.route('/tags', methods=['GET'])
 def tags():
     logic = TagsLogic()
     tags = logic.read_tags("Database/tags.csv")
-    return render_template("index.html", data=tags, title="Tags")
+    return render_template("index.html", data=tags, title="Tags", display=True)

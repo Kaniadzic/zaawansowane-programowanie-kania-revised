@@ -2,7 +2,11 @@
 {% block title %} {{title}} {% endblock %}
 
 {% block content %}
-    {% for row in data %}
-        <p class="data-row"> {{ row }} </p>
-    {% endfor %}
+    {% if display == True %}
+        <div class="container-data">
+            {% for row in data %}
+                <p class="data-row"> {{ row }} </p>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}
