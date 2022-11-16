@@ -32,10 +32,10 @@ def movies():
     return render_template("index.html", data=movies, title="Movies")
 
 
-@app.route('/links', methods=['GET'])
-def links():
+@app.route('/links/<item_count>', methods=['GET'])
+def links(item_count: int):
     logic = LinksLogic()
-    links = logic.read_links("Database/links.csv")
+    links = logic.read_links("Database/links.csv", item_count)
     return render_template("index.html", data=links, title="Links")
 
 
