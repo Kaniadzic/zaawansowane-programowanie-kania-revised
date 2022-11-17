@@ -7,10 +7,11 @@ class MoviesLogic:
 
     _movies = []
 
-    def read_movies(self, path: str) -> list:
+    def read_movies(self, path: str, item_count: int) -> list:
         """
         Funkcja wczytująca dane filmów z bazy danych (pliku .csv)
         :param path: ścieżka do pliku
+        :param item_count:
         :return: lista filmów
         """
         with open(path, 'r', encoding='utf-8') as file:
@@ -21,4 +22,4 @@ class MoviesLogic:
                 self._movies.append(movie.__dict__)
 
         self._movies.pop(0)
-        return self._movies
+        return self._movies[0: int(item_count)]

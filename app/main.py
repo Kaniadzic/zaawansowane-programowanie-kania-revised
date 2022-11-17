@@ -25,18 +25,32 @@ def home():
     return render_template("index.html", title="Home page (it's empty!)", display=False)
 
 
-@app.route('/movies', methods=['GET'])
-def movies():
+@app.route('/movies/<item_count>', methods=['GET'])
+def movies(item_count: int):
     logic = MoviesLogic()
-    movies = logic.read_movies("Database/movies.csv")
+    movies = logic.read_movies("Database/movies.csv", item_count)
     return render_template("index.html", data=movies, title="Movies", display=True)
+
+
+@app.route('/get_movies/<item_count>', methods=['GET'])
+def get_movies(item_count: int):
+    logic = MoviesLogic()
+    movies = logic.read_movies("Database/movies.csv", item_count)
+    return movies
 
 
 @app.route('/links/<item_count>', methods=['GET'])
 def links(item_count: int):
     logic = LinksLogic()
     links = logic.read_links("Database/links.csv", item_count)
-    return render_template("index.html", data=links, title="Links", display=True)
+    return render_template("links.html", data=links, title="Links", display=True)
+
+
+@app.route('/get_links/<item_count>', methods=['GET'])
+def get_links(item_count: int):
+    logic = LinksLogic()
+    links = logic.read_links("Database/links.csv", item_count)
+    return links
 
 
 @app.route('/ratings', methods=['GET'])

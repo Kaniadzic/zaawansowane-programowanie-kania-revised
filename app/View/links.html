@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="container-data">
+        <table>
+            <tr>
+                <th> Movie ID </th>
+                <th> IMDB ID </th>
+                <th> TMDB ID </th>
+            </tr>
+            {% for row in data %}
+                <tr class="data-row">
+                    <td> {{ row.movie_id }} </td>
+                    <td> {{ row.imdb_id }} </td>
+                    <td> {{ row.tmdb_id }} </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
