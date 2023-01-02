@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+<div class="main-page-content">
+    <section class="main-page-section section-main">
+        <div class="section-main-desc">
+            <h1 class="section-main-desc-title">OpenEye</h1>
+            <p class="section-main-desc-text">OpenEye is a innovative app which uses cutting-edge AI technology to
+                detect persons on multimedia in matter of seconds</p>
+        </div>
+        <div class="section-main-articles">
+            <article class="main-article">
+                <span class="material-symbols-outlined article-icon">
+                    accessibility_new
+                </span>
+                <h2>Image Detection</h2>
+                <p>OpenEye lets you detect human persons (works only for humans, no rogue AI allowed) on photos you
+                    upload to app!</p>
+            </article>
+            <article class="main-article">
+                <span class="material-symbols-outlined article-icon">
+                    info
+                </span>
+                <h2>About</h2>
+                <p>OpenEye uses OpenCV with haar_cascade to detect objects (in this case persons) on
+                    photos and videos</p>
+                <a href="{{ url_for('imgdetection') }}" class="get-started-button-full">Get Started</a>
+            </article>
+            <article class="main-article">
+                <span class="material-symbols-outlined article-icon">
+                    video_camera_front
+                </span>
+                <h2>Video Detection</h2>
+                <p>OpenEye allows user to detect persons in real-time on video stream passed by user</p>
+                <a href="{{ url_for('imgdetection') }}" class="get-started-button-resp">Get Started</a>
+            </article>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

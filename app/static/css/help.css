@@ -1,0 +1,13 @@
+.help-content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.help-text {
+    color: #31E1F7;
+    text-shadow: 0 0 16px #31E1F7;
+    font-family: consolas;
+}

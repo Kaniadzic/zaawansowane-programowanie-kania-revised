@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block content %}
+
+<div class="image-detection-content">
+    <p class="messages">
+        {% with messages = get_flashed_messages() %}
+    <ul class="messages-box">
+        {% if messages %}
+        {% for message in messages %}
+        <li> {{ message }} </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+
+    {% endwith %}
+    </p>
+
+    <h2 class="help-text">{{ main_text }}</h2>
+
+    {% if detection_completed %}
+    <div class="image-container image-container-center">
+        <img src="{{ url_for('display_image') }}">
+    </div>
+    {% else %}
+    <div class="image-container">
+        <div class="glitch-line-0"></div>
+        <p class="glitch-text">No image selected</p>
+    </div>
+    {% endif %}
+
+    <form method="post" action="/imgdetection" enctype="multipart/form-data" class="image-form">
+        <input type="file" id="image-upload" name="file" autocomplete="off" class="image-select-button"
+            value="Select file" required>
+        <input type="submit" class="image-submit-button" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

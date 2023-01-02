@@ -1,0 +1,20 @@
+.video-buttons>button {
+    border: 2px solid #31E1F7;
+    border-radius: 2px;
+    padding: 10px 20px;
+    margin: 0 16px;
+    background-color: transparent;
+    box-shadow: inset 0 0 8px #31E1F7, 0 0 8px #31E1F7;
+    color: #31E1F7;
+    font-family: consolas;
+    font-size: 18px;
+    cursor: pointer;
+    text-shadow: 0 0 8px #31E1F7;
+    transition: all .5s ease-in-out;
+}
+
+.video-buttons>button:hover {
+    background-color: #31E1F7;
+    color: #061E3D;
+    box-shadow: 0 0 16px #31E1F7;
+}
