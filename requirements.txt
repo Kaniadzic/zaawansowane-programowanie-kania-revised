@@ -1,0 +1,11 @@
+flask
+flask_restful
+sys
+os
+cv2
+imutils
+PIL
+werkzeug
+numpy
+time
+gunicorn

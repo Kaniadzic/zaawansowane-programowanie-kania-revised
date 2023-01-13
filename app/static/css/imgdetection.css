@@ -1,0 +1,132 @@
+.image-detection-content {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@keyframes glitch-line {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 49vh;
+    }
+}
+
+.image-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 22px 0 16px 0;
+    width: 40vw;
+    height: 50vh;
+    border: 2px solid #31E1F7;
+    border-radius: 2px;
+    background-color: #000000;
+    box-shadow: 0 0 16px #31E1F7;
+}
+
+.image-container-center {
+    justify-content: center !important;
+}
+
+.glitch-line-0 {
+    width: 100%;
+    height: 1px;
+    border: 1px solid #ffffff;
+    opacity: .15;
+    box-shadow: 0 -4px 4px #ffffff;
+    position: relative;
+    animation-name: glitch-line;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+
+.glitch-text {
+    padding-top: 30%;
+    font-family: consolas;
+    opacity: .15;
+    font-size: 22px;
+    text-shadow: 0 0 8px #ffffff;
+}
+
+.image-container>img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.image-form {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.image-select-button {
+    background-color: #061E3D;
+    height: 80px;
+    padding: 16px;
+    cursor: pointer;
+    font-family: consolas;
+    color: #ffffff;
+    text-shadow: 0 0 6px #ffffff;
+}
+
+.image-select-button::file-selector-button {
+    color: #31E1F7;
+    background-color: #061E3D;
+    border: 2px solid #31E1F7;
+    border-radius: 2px;
+    width: 92px;
+    height: 48px;
+    font-family: consolas;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: inset 0 0 8px #31E1F7, 0 0 8px #31E1F7;
+    text-shadow: 0 0 8px #31E1F7;
+    transition: all .5s ease-in-out;
+}
+
+.image-select-button::file-selector-button:hover {
+    background-color: #31E1F7;
+    box-shadow: 0 0 14px #31E1F7;
+    color: #061E3D;
+}
+
+.messages+ul {
+    color: #00c21d;
+    font-family: consolas;
+    font-size: 22px;
+    list-style-type: none;
+    text-shadow: 0 0 16px #00c21d;
+}
+
+.image-submit-button {
+    border: 2px solid #00c21d;
+    border-radius: 2px;
+    background-color: #061E3D;
+    color: #00c21d;
+    width: 92px;
+    height: 48px;
+    font-family: consolas;
+    text-shadow: 0 0 8px #00c21d;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: inset 0 0 8px #00c21d, 0 0 8px #00c21d;
+    transition: all .5s ease-in-out;
+}
+
+.image-submit-button:hover {
+    background-color: #00c21d;
+    box-shadow: 0 0 22px #00c21d;
+    color: #061E3D;
+}
+
+.messages-box {
+    height: 30px;
+}

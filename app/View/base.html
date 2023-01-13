@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %} </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/imgdetection.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/viddetection.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <input id="collapsible" class="toggle" type="checkbox">
+            <label for="collapsible" class="label-toggle">
+                <span class="material-symbols-outlined label-toggle-icon">
+                    settings
+                </span>
+            </label>
+            <nav class="navbar collapsible-content">
+                <a href="{{ url_for('home') }}"> Main Page </a>
+                <a href="{{ url_for('imgdetection') }}"> Image Detection </a>
+                <a href="{{ url_for('viddetection') }}"> Video Detection </a>
+                <a href="{{ url_for('help') }}"> Help </a>
+            </nav>
+        </div>
+
+        <div class="content">
+            {% block content %} {% endblock %}
+        </div>
+
+        <footer class="footer">
+            <p>Szymon Kania 2022 - <a class="github-link"
+                    href="https://github.com/Kaniadzic/zaawansowane-programowanie-kania-revised"
+                    target="_blank">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>
